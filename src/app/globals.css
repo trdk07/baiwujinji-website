@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #F5F0EB;
+  --color-bg-card: #EFEBE5;
+  --color-warm: #E8DDD4;
+  --color-sand: #C8B8A8;
+  --color-sage: #B8C5BE;
+  --color-mist: #B5BFC8;
+  --color-ochre: #C2A68C;
+  --color-ink: #2C2C2C;
+  --color-ink-sub: #4A453C;
+  --color-ink-dim: #6E675E;
+  --color-seal: #C23B3B;
+  --color-seal-hover: #A83232;
+  --font-serif: 'Noto Serif TC', serif;
+  --font-sans: 'Noto Sans TC', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background-color: var(--color-bg);
+  font-size: 16px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* Desktop: bump base font size */
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+/* Page overlay — sits on top of body background */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(245, 240, 235, 0.58);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gold text for serif headings */
+.text-serif {
+  font-family: var(--font-serif);
+}
+
+/* Scroll reveal */
+.rv {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.rv.v {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Marquee */
+@keyframes marquee-scroll {
+  to { transform: translateX(-50%); }
+}
+
+/* Status pulse */
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* Quote block */
+.quote-block {
+  border-left: 3px solid var(--color-seal);
+  padding: 24px 0 24px 32px;
+  margin: 40px 0;
+}
+
+/* Service card hover */
+.scard {
+  transition: all 0.5s ease;
+}
+.scard:hover {
+  transform: translateY(-4px);
+  background: rgba(239, 235, 229, 0.92);
+  border-color: rgba(200, 184, 168, 0.4);
+  box-shadow: 0 16px 48px rgba(44, 44, 44, 0.06);
+}
+.scard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-seal), transparent);
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transform-origin: center;
+}
+.scard:hover::before {
+  transform: scaleX(0.6);
+}
+.scard-arrow {
+  transition: all 0.3s;
+  opacity: 0;
+  transform: translateX(-8px);
+}
+.scard:hover .scard-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-sand); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink-dim); }
