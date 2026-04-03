@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   title: "百無禁忌研究所 — 人生顧問・法事服務・感情修復",
   description:
     "人生本來就有無限可能。百無禁忌研究所提供人生顧問、法事服務、感情修復，先好好把心裡那團迷霧釐清，看見問題之後就不是那麼困難。",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
