@@ -2,9 +2,10 @@ import Link from "next/link";
 import PageBackground from "@/components/PageBackground";
 import { notFound } from "next/navigation";
 import { getAllArticlePaths, getArticle } from "@/data/service-map";
-import { getPageContent } from "@/lib/notion";
 import { markdownToHtml } from "@/lib/markdown";
 import type { Metadata } from "next";
+import fs from "fs";
+import path from "path";
 
 type Props = { params: Promise<{ category: string; slug: string }> };
 
@@ -29,16 +30,16 @@ export default async function ArticlePage({ params }: Props) {
 
   const { category: cat, article } = result;
 
-  // Fetch content from Notion (or use fallback)
+  // Read content from local markdown file
   let contentHtml = "";
   try {
-    const markdown = await getPageContent(article.notionPageId);
+    const filePath = path.join(process.cwd(), "src/content/services", article.contentFile);
+    const markdown = fs.readFileSync(filePath, "utf-8");
     contentHtml = markdownToHtml(markdown);
-  } catch (e) {
-    // Fallback: show title and CTA if Notion API is not configured
+  } catch {
     contentHtml = `
       <p class="rv text-base text-ink-sub leading-9 font-light mb-5">
-        內容載入中。請確認已設定 NOTION_API_KEY 環境變數。
+        內容載入中。
       </p>
     `;
   }
@@ -73,7 +74,7 @@ export default async function ArticlePage({ params }: Props) {
         )}
       </div>
 
-      {/* Article content from Notion */}
+      {/* Article content */}
       <article
         className="pb-16 px-6 md:px-12 max-w-[800px] mx-auto"
         dangerouslySetInnerHTML={{ __html: contentHtml }}
