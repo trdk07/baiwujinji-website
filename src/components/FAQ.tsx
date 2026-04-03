@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
-const faqs = [
+const faqs: { q: string; a: ReactNode }[] = [
   {
     q: "法事需要到現場嗎？",
     a: "不一定。大部分的法事可以遠距處理，少數需要到現場的我們會事先說明。線上一樣有效，不用擔心。",
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "命理諮詢跟算命有什麼不同？",
-    a: "算命通常是告訴你「會怎樣」，我們做的是幫你看清楚「現在站在哪裡、前面的路大概長什麼樣」，然後你自己決定怎麼走。命盤是地圖，不是判決書。",
+    a: <>算命通常是告訴你「會怎樣」，我們做的是幫你看清楚「現在站在哪裡、前面的路大概長什麼樣」，然後你自己決定怎麼走。<span className="em-sub">命盤</span>是<span className="em-sub">地圖</span>，不是<span className="em">判決書</span>。</>,
   },
   {
     q: "法事做了沒效怎麼辦？",

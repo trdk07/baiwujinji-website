@@ -23,10 +23,10 @@ export default function Home() {
             />
           </EasterEgg>
           <h1 className="text-serif text-[clamp(24px,3.5vw,36px)] font-semibold text-ink tracking-[6px] mb-5 leading-relaxed">
-            人生卡住的時候，找對人聊聊
+            人生卡住的時候，<span className="em">找對人聊聊</span>
           </h1>
           <p className="text-lg text-ink-sub max-w-[480px] mx-auto mb-4 leading-9 tracking-wider">
-            人生顧問 ／ 法事服務 ／ 感情修復
+            人生顧問 ／ <span className="em-sub">法事</span>服務 ／ 感情修復
           </p>
           <p className="text-base text-ink-dim max-w-[480px] mx-auto mb-11 leading-8">
             先好好把自己心裡那團迷霧一起釐清，也許看見問題之後就不是那麼困難。
@@ -89,7 +89,7 @@ export default function Home() {
               「天官賜福，百無禁忌」而「百無禁忌，諸事皆宜」
             </p>
             <p className="rv text-base md:text-lg text-ink-sub leading-9 mb-4">
-              人生本來就像一場遊戲：有關卡、有挑戰，也有值得體驗的風景。碰到卡關的時候不代表你有問題，只是需要有人幫你看看地圖、找到下一步怎麼走。在玄學門前，沒有什麼不能聊的，某些使你駐足不前的，也許是你的限制性。認識自己、投資自己，是破關最好的方式。
+              人生本來就像一場遊戲：有關卡、有挑戰，也有值得體驗的風景。碰到卡關的時候不代表你有問題，只是需要有人幫你看看<span className="em-sub">地圖</span>、找到下一步怎麼走。在玄學門前，沒有什麼不能聊的，某些使你駐足不前的，也許是你的限制性。認識自己、投資自己，是破關最好的方式。
             </p>
             <p className="rv text-sm md:text-base text-ink-dim pt-3.5 border-t border-sand/25 mb-6">
               人生本來就有無限可能，這就是「百無禁忌」的意思。
