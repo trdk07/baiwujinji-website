@@ -13,8 +13,8 @@
   --color-ink-dim: #6E675E;
   --color-seal: #C23B3B;
   --color-seal-hover: #A83232;
-  --font-serif: 'Noto Serif TC', serif;
-  --font-sans: 'Noto Sans TC', sans-serif;
+  --font-serif: var(--font-noto-serif), serif;
+  --font-sans: var(--font-noto-sans), sans-serif;
 }
 
 body {

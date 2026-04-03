@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Noto_Sans_TC, Noto_Serif_TC } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -6,6 +7,20 @@ import FloatingLine from "@/components/FloatingLine";
 import ScrollReveal from "@/components/ScrollReveal";
 import TabTitle from "@/components/TabTitle";
 import PageBackground from "@/components/PageBackground";
+
+const notoSans = Noto_Sans_TC({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  display: "swap",
+  variable: "--font-noto-sans",
+});
+
+const notoSerif = Noto_Serif_TC({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-noto-serif",
+});
 
 export const metadata: Metadata = {
   title: "百無禁忌研究所 — 人生顧問・法事服務・感情修復",
@@ -19,13 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="zh-TW">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="zh-TW" className={`${notoSans.variable} ${notoSerif.variable}`} suppressHydrationWarning>
       <body>
         <div id="app" style={{ position: "relative", zIndex: 1 }}>
           <Navbar />
