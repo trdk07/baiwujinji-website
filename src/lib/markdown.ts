@@ -18,7 +18,13 @@ export function markdownToHtml(md: string): string {
       continue;
     }
 
-    // Headings
+    // Headings (### before ## before # to avoid false matches)
+    if (trimmed.startsWith("### ")) {
+      if (inList) { html.push("</ul>"); inList = false; }
+      const text = processInline(trimmed.slice(4));
+      html.push(`<h3 class="rv text-serif text-lg md:text-xl font-semibold mb-3 mt-10 tracking-wide">${text}</h3>`);
+      continue;
+    }
     if (trimmed.startsWith("## ")) {
       if (inList) { html.push("</ul>"); inList = false; }
       const text = processInline(trimmed.slice(3));
@@ -29,6 +35,14 @@ export function markdownToHtml(md: string): string {
       if (inList) { html.push("</ul>"); inList = false; }
       const text = processInline(trimmed.slice(2));
       html.push(`<h1 class="rv text-serif text-2xl md:text-3xl font-semibold mb-5 mt-12 tracking-wide">${text}</h1>`);
+      continue;
+    }
+
+    // Blockquote
+    if (trimmed.startsWith("> ")) {
+      if (inList) { html.push("</ul>"); inList = false; }
+      const text = processInline(trimmed.slice(2));
+      html.push(`<blockquote class="rv border-l-3 border-seal/30 pl-5 py-2 my-8 text-base md:text-lg text-ink-sub leading-9 italic">${text}</blockquote>`);
       continue;
     }
 
