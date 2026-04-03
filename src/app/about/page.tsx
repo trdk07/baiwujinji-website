@@ -17,7 +17,7 @@ export default function AboutPage() {
           百無禁忌，諸事皆宜
         </h1>
         <p className="rv text-lg text-ink-sub leading-9 max-w-[600px]">
-          人生本來就像一場遊戲：有關卡、有挑戰，也有值得體驗的風景。碰到卡關的時候不代表你有問題，只是需要有人幫你看看地圖。
+          人生本來就像一場遊戲：有關卡、有挑戰，也有值得體驗的風景。碰到卡關的時候不代表你有問題，只是需要有人幫你看看<span className="em-sub">地圖</span>。
         </p>
       </div>
 
@@ -44,10 +44,10 @@ export default function AboutPage() {
       <section className="py-20 px-6 md:px-12 max-w-[800px] mx-auto">
         <div className="rv text-xs text-ink-dim tracking-[5px] uppercase mb-3">/ 我們怎麼看這件事</div>
         <h2 className="rv text-serif text-[clamp(22px,3vw,28px)] font-semibold mb-6 leading-snug tracking-wide">
-          命盤是地圖，不是判決書
+          <span className="em-sub">命盤</span>是<span className="em-sub">地圖</span>，不是<span className="em">判決書</span>
         </h2>
         <p className="rv text-base md:text-lg text-ink-sub leading-9 mb-5">
-          命盤告訴你現在站在哪裡、前面的路大概長什麼樣子。但要不要走、怎麼走，還是你自己決定。我們的工作是幫你把地圖看清楚，不是替你做決定。
+          <span className="em-sub">命盤</span>告訴你現在站在哪裡、前面的路大概長什麼樣子。但要不要走、怎麼走，還是你自己決定。我們的工作是幫你把<span className="em-sub">地圖</span>看清楚，不是替你做決定。
         </p>
         <p className="rv text-base md:text-lg text-ink-sub leading-9">
           法事也一樣。它不是萬能的，但在某些狀況下，確實能幫你把卡住的東西鬆開。某些使你駐足不前的，也許是你的限制性。認識自己、投資自己，是破關最好的方式。
@@ -67,9 +67,9 @@ export default function AboutPage() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-12">
           {[
-            { num: "/01", title: "不靈性恐嚇", desc: "不會用「不做就會怎樣」來嚇你。你的人生是你的，不是拿來恐嚇的。" },
-            { num: "/02", title: "不強迫推銷", desc: "不需要的就不做。做好該做的事，需要的時候你自然會回來。" },
-            { num: "/03", title: "不誇大承諾", desc: "能做到什麼程度，開始之前會講清楚。超出邊界的事情不裝懂。" },
+            { num: "/01", title: <><span className="em">不靈性恐嚇</span></>, desc: "不會用「不做就會怎樣」來嚇你。你的人生是你的，不是拿來恐嚇的。" },
+            { num: "/02", title: <><span className="em">不強迫推銷</span></>, desc: "不需要的就不做。做好該做的事，需要的時候你自然會回來。" },
+            { num: "/03", title: <><span className="em">不誇大承諾</span></>, desc: "能做到什麼程度，開始之前會講清楚。超出邊界的事情不裝懂。" },
           ].map((p) => (
             <div
               key={p.num}

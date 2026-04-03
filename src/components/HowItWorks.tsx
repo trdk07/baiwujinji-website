@@ -1,8 +1,10 @@
-const steps = [
+import type { ReactNode } from "react";
+
+const steps: { num: string; title: string; desc: ReactNode }[] = [
   {
     num: "01",
     title: "加 LINE 說你的狀況",
-    desc: "不用準備什麼，直接跟我們說你碰到的問題就好。可以先聊三十分鐘，聊完再決定下一步。",
+    desc: <>不用準備什麼，直接跟我們說你碰到的問題就好。可以先聊<span className="em-sub">三十分鐘</span>，聊完再決定下一步。</>,
   },
   {
     num: "02",
@@ -26,7 +28,7 @@ export default function HowItWorks() {
         怎麼開始？
       </h2>
       <p className="rv text-base md:text-lg text-ink-sub max-w-[540px] leading-8 mb-12">
-        三步驟，不複雜
+        三步驟，<span className="em-sub">不複雜</span>
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
