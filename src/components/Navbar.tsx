@@ -11,16 +11,19 @@ export default function Navbar() {
   const isHome = pathname === "/";
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80);
+    const handleScroll = () => {
+      const shouldBeScrolled = window.scrollY > 80;
+      setScrolled((prev) => (prev !== shouldBeScrolled ? shouldBeScrolled : prev));
+    };
     // Inner pages start with visible nav
     if (!isHome) setScrolled(true);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-100 px-6 md:px-12 py-4 flex items-center justify-between transition-all duration-400 ${
+      className={`fixed top-0 left-0 right-0 z-100 px-6 md:px-12 py-4 flex items-center justify-between transition-[background-color,border-color,backdrop-filter] duration-400 ${
         scrolled
           ? "bg-bg/88 backdrop-blur-[14px] border-b border-sand/25"
           : "bg-transparent"
