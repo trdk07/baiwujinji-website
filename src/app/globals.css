@@ -82,10 +82,10 @@ body::after {
 /* Service card hover */
 .scard {
   --card-color: var(--color-sand);
-  transition: all 0.5s ease;
+  transition: translate 0.5s ease, background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 }
 .scard:hover {
-  transform: translateY(-4px);
+  translate: 0 -4px;
   background: rgba(239, 235, 229, 0.92);
   border-color: rgba(200, 184, 168, 0.4);
   box-shadow: 0 16px 48px rgba(44, 44, 44, 0.06);
