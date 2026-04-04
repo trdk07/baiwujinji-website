@@ -47,21 +47,25 @@ export default function ServicesPage() {
             <Link
               key={cat.slug}
               href={`/services/${cat.slug}`}
-              className="scard rv relative overflow-hidden bg-bg-card/70 backdrop-blur-[8px] border border-sand/18 rounded-[14px] p-10 no-underline text-inherit"
+              className={`scard rv relative overflow-hidden bg-bg-card/70 backdrop-blur-[8px] border border-sand/18 rounded-[14px] p-10 no-underline text-inherit${cat.featured ? " scard-featured" : ""}`}
+              style={{ "--card-color": cat.color } as React.CSSProperties}
             >
-              <div className="text-[11px] text-sand tracking-[2px] mb-5">
+              {cat.badge && (
+                <div className="scard-badge">{cat.badge}</div>
+              )}
+              <div className="text-[15px] font-bold tracking-[2px] mb-5" style={{ color: cat.color }}>
                 /{String(i + 1).padStart(2, "0")}
               </div>
-              <h3 className="text-serif text-[22px] font-semibold mb-3 tracking-wide">
+              <h3 className="scard-title text-serif text-[22px] font-semibold mb-3 tracking-wide">
                 {cat.title}
               </h3>
-              <p className="text-sm md:text-base text-ink-sub leading-relaxed mb-3">
+              <p className="scard-tagline text-sm md:text-base text-ink-sub leading-relaxed mb-3">
                 {cat.tagline}
               </p>
-              <span className="text-sm text-ink-dim block">
+              <span className="text-sm text-ink-dim block mb-6">
                 {cat.articles.length} 項服務
               </span>
-              <span className="scard-arrow absolute bottom-7 right-7 text-base text-sand">
+              <span className="scard-arrow absolute bottom-7 right-7">
                 →
               </span>
             </Link>
