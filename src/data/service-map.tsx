@@ -12,6 +12,12 @@ export interface ServiceCategory {
   taglineText: string;
   /** Optional cover image in /public/images/services/ */
   image?: string;
+  /** CSS custom property value for the category color */
+  color: string;
+  /** Optional badge text shown on the card */
+  badge?: string;
+  /** Whether this is the featured (large) card */
+  featured?: boolean;
   /** SEO: 自訂 meta title（≤60 字元） */
   seoTitle?: string;
   /** SEO: 自訂 meta description（≤155 字元） */
@@ -40,6 +46,8 @@ export const serviceCategories: ServiceCategory[] = [
     tagline: <>看不清下一步的時候，透過<span className="em-sub">命盤</span>幫你把<span className="em-sub">地圖</span>攤開來看。</>,
     taglineText: "看不清下一步的時候，透過命盤幫你把地圖攤開來看。",
     image: "/images/services/icon-mingli.png",
+    color: "var(--color-mist)",
+    badge: "不知道選什麼？從這裡開始",
     seoTitle: "命理諮詢線上｜方向不明？幫你看清下一步",
     seoDescription: "找不到人生方向？18 年經驗命理師線上諮詢，透過命盤幫你釐清財運、感情、職涯。不恐嚇、不推銷，先聊再決定。立即加 LINE 諮詢 →",
     articles: [
@@ -56,6 +64,7 @@ export const serviceCategories: ServiceCategory[] = [
     tagline: <>什麼都卡住的時候，也許不是你的問題，是<span className="em-sub">運勢</span>在走低谷。</>,
     taglineText: "什麼都卡住的時候，也許不是你的問題，是運勢在走低谷。",
     image: "/images/services/icon-zhuanyun.png",
+    color: "var(--color-seal)",
     articles: [
       { slug: "turning-luck", title: "轉運法事｜低谷走不出來，有時候不是你不夠努力", shortTitle: "轉運法事", contentFile: "turning-luck.md", image: "/images/blog/turning-luck.webp" },
     ],
@@ -66,6 +75,9 @@ export const serviceCategories: ServiceCategory[] = [
     tagline: <>錢留不住或進不來，有時候跟努力無關，是<span className="em-sub">財路</span>需要打通。</>,
     taglineText: "錢留不住或進不來，有時候跟努力無關，是財路需要打通。",
     image: "/images/services/icon-zhaocai.png",
+    color: "var(--color-ochre)",
+    badge: "最多人問的",
+    featured: true,
     seoTitle: "求財法事推薦｜財運不好怎麼辦？",
     seoDescription: "財運不好怎麼辦？補財庫、招財法事、觀音送財符，多種開運求財方法。18 年經驗，先評估再處理，不強迫推銷。立即加 LINE 諮詢 →",
     articles: [
@@ -85,6 +97,7 @@ export const serviceCategories: ServiceCategory[] = [
     tagline: <>職場卡住或生意不好，有時候不是策略問題，是<span className="em-sub">局勢</span>需要調整。</>,
     taglineText: "職場卡住或生意不好，有時候不是策略問題，是局勢需要調整。",
     image: "/images/services/icon-shiye.png",
+    color: "var(--color-sage)",
     articles: [
       { slug: "career-noble", title: "職場貴人法術｜升職加薪總輪不到你？", shortTitle: "職場貴人", contentFile: "career-noble.md", image: "/images/blog/career-noble.webp" },
       { slug: "workplace-relations", title: "職場人際法術｜同事關係差到影響工作怎麼辦？", shortTitle: "職場人際", contentFile: "workplace-relations.md", image: "/images/blog/workplace-relations.webp" },
@@ -96,6 +109,7 @@ export const serviceCategories: ServiceCategory[] = [
     tagline: <>不是沒人要，是<span className="em-sub">緣分</span>還沒對上。幫你把感情的門打開。</>,
     taglineText: "不是沒人要，是緣分還沒對上。幫你把感情的門打開。",
     image: "/images/services/icon-zhaohua.png",
+    color: "var(--color-rose)",
     articles: [
       { slug: "attract-love", title: "招桃花法術｜單身太久不是沒人要，是緣分還沒對上", shortTitle: "招桃花", contentFile: "attract-love.md", image: "/images/blog/attract-love.webp" },
       { slug: "dating-app", title: "交友軟體沒用？招桃花法術幫你打開真正的緣分", shortTitle: "交友軟體招桃花", contentFile: "dating-app.md", image: "/images/blog/dating-app.webp" },
@@ -108,6 +122,7 @@ export const serviceCategories: ServiceCategory[] = [
     tagline: <>挽回、第三者、家庭關係，先判斷<span className="em-sub">值不值得</span>，再決定怎麼做。</>,
     taglineText: "挽回、第三者、家庭關係，先判斷值不值得，再決定怎麼做。",
     image: "/images/services/icon-ganqing.png",
+    color: "var(--color-sand-dark)",
     seoTitle: "感情挽回法事推薦｜挽回修復服務",
     seoDescription: "分手後還有機會嗎？感情挽回法事推薦，先判斷值不值得挽回，再決定怎麼做。不強推、不誇大，18 年經驗。",
     articles: [

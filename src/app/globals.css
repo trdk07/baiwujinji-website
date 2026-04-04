@@ -13,6 +13,8 @@
   --color-ink-dim: #6E675E;
   --color-seal: #C23B3B;
   --color-seal-hover: #A83232;
+  --color-rose: #D4A0A0;
+  --color-sand-dark: #A89888;
   --font-serif: var(--font-noto-serif), serif;
   --font-sans: var(--font-noto-sans), sans-serif;
 }
@@ -79,6 +81,7 @@ body::after {
 
 /* Service card hover */
 .scard {
+  --card-color: var(--color-sand);
   transition: all 0.5s ease;
 }
 .scard:hover {
@@ -93,23 +96,70 @@ body::after {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--color-seal), transparent);
-  transform: scaleX(0);
-  transition: transform 0.5s;
-  transform-origin: center;
+  height: 5px;
+  background: var(--card-color);
+  border-radius: 14px 14px 0 0;
+  transition: height 0.3s ease;
 }
 .scard:hover::before {
-  transform: scaleX(0.6);
+  height: 6px;
+}
+.scard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card-color) 12%, transparent) 0%, transparent 50%);
+  pointer-events: none;
+  border-radius: 14px;
 }
 .scard-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(194, 59, 59, 0.08);
+  color: var(--color-seal);
+  font-size: 16px;
   transition: all 0.3s;
-  opacity: 0;
-  transform: translateX(-8px);
 }
 .scard:hover .scard-arrow {
-  opacity: 1;
-  transform: translateX(0);
+  background: rgba(194, 59, 59, 0.14);
+}
+/* Featured card (求財開路) */
+.scard-featured {
+  --card-color: var(--color-ochre);
+}
+@media (min-width: 640px) {
+  .scard-featured {
+    grid-column: span 2;
+  }
+  .scard-featured .scard-title {
+    font-size: 32px;
+  }
+  .scard-featured .scard-tagline {
+    font-size: 16px;
+  }
+  .scard-featured .scard-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+/* Badge */
+.scard-badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(194, 59, 59, 0.08);
+  color: var(--color-seal);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
 }
 
 /* Smooth scrollbar */
