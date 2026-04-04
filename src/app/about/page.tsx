@@ -50,7 +50,7 @@ export default function AboutPage() {
           <span className="em-sub">命盤</span>告訴你現在站在哪裡、前面的路大概長什麼樣子。但要不要走、怎麼走，還是你自己決定。我們的工作是幫你把<span className="em-sub">地圖</span>看清楚，不是替你做決定。
         </p>
         <p className="rv text-base md:text-lg text-ink-sub leading-9">
-          法事也一樣。它不是萬能的，但在某些狀況下，確實能幫你把卡住的東西鬆開。某些使你駐足不前的，也許是你的限制性。認識自己、投資自己，是破關最好的方式。
+          <span className="em-sub">法事</span>也一樣。它不是萬能的，但在某些狀況下，確實能幫你把卡住的東西鬆開。某些使你駐足不前的，也許是你的限制性。<span className="em">認識自己、投資自己</span>，是破關最好的方式。
         </p>
         <div className="quote-block rv">
           <p className="text-serif text-lg text-ink leading-8">
