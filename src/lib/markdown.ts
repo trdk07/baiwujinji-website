@@ -42,7 +42,7 @@ export function markdownToHtml(md: string): string {
     if (trimmed.startsWith("> ")) {
       if (inList) { html.push("</ul>"); inList = false; }
       const text = processInline(trimmed.slice(2));
-      html.push(`<blockquote class="rv border-l-3 border-seal/30 pl-5 py-2 my-8 text-base md:text-lg text-ink-sub leading-9 italic">${text}</blockquote>`);
+      html.push(`<blockquote class="rv border-l-3 border-seal/30 bg-bg-card/50 rounded-r-lg pl-5 pr-4 py-3 my-8 text-base md:text-lg text-ink-sub leading-9 italic">${text}</blockquote>`);
       continue;
     }
 
@@ -75,8 +75,10 @@ export function markdownToHtml(md: string): string {
 }
 
 function processInline(text: string): string {
+  // Highlight ==text==
+  text = text.replace(/==(.+?)==/g, '<mark class="em-sub bg-transparent">$1</mark>');
   // Bold
-  text = text.replace(/\*\*(.+?)\*\*/g, '<strong class="font-medium text-ink">$1</strong>');
+  text = text.replace(/\*\*(.+?)\*\*/g, '<strong class="em font-semibold">$1</strong>');
   // Italic
   text = text.replace(/\*(.+?)\*/g, "<em>$1</em>");
   // Links
