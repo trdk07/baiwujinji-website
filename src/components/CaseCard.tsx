@@ -3,7 +3,7 @@
 import type { CaseStudy } from "@/data/case-studies";
 
 function FormatBadge({ format }: { format: CaseStudy["format"] }) {
-  const labels = { quote: "諮詢紀錄", screenshot: "LINE 對話", story: "真實故��" };
+  const labels = { quote: "諮詢紀錄", screenshot: "LINE 對話", story: "真實故事" };
   const colors = {
     quote: "bg-seal/8 text-seal",
     screenshot: "bg-[#06C755]/8 text-[#06C755]",
