@@ -45,7 +45,7 @@ export default async function CategoryPage({ params }: Props) {
         description={cat.taglineText}
         url={`${SITE_URL}/services/${cat.slug}`}
       />
-      <PageBackground src="/images/bg-services.webp" />
+      <PageBackground src="/images/bg-services.webp" position="center 40%" mobilePosition="60% center" />
       <div className="pt-[160px] pb-16 px-6 md:px-12 max-w-[1100px] mx-auto">
         {/* Breadcrumb */}
         <nav className="rv flex items-center gap-2 text-sm text-ink-dim mb-8">

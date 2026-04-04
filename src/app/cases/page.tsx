@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function CasesPage() {
   return (
     <>
-      <PageBackground src="/images/bg-cases.webp" />
+      <PageBackground src="/images/bg-cases.webp" position="center 60%" mobilePosition="center 50%" />
       <div className="pt-[160px] pb-16 px-6 md:px-12 max-w-[1100px] mx-auto">
         <div className="rv text-xs text-ink-dim tracking-[5px] uppercase mb-3">cases</div>
         <h1 className="rv text-serif text-[clamp(28px,4vw,38px)] font-semibold leading-snug mb-5 tracking-[2px]">

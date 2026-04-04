@@ -12,7 +12,7 @@ export const metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <PageBackground src="/images/bg-services.webp" />
+      <PageBackground src="/images/bg-services.webp" position="center 40%" mobilePosition="60% center" />
 
       {/* Hero */}
       <section className="pt-40 pb-20 px-6 md:px-12 max-w-[1100px] mx-auto text-center">

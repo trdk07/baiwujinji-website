@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }: Props) {
         datePublished={post.date}
         image={post.image}
       />
-      <PageBackground src="/images/bg-about.webp" />
+      <PageBackground src="/images/bg-about.webp" position="center 40%" mobilePosition="40% center" />
       <div className="pt-[160px] pb-16 px-6 md:px-12 max-w-[800px] mx-auto">
         <nav className="rv flex items-center gap-2 text-sm text-ink-dim mb-8 flex-wrap">
           <Link href="/" className="hover:text-seal transition-colors">首頁</Link>

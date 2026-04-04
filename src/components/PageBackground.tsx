@@ -4,21 +4,48 @@ import { useEffect } from "react";
 
 interface Props {
   src?: string;
+  /** Desktop background-position (default: "top center") */
+  position?: string;
+  /** Mobile background-position override (default: same as position) */
+  mobilePosition?: string;
   /** true = parallax pan through tall image as user scrolls */
   parallax?: boolean;
 }
 
-export default function PageBackground({ src = "/images/bg-home.webp", parallax = false }: Props) {
+const MOBILE_QUERY = "(max-width: 768px)";
+
+export default function PageBackground({
+  src = "/images/bg-home.webp",
+  position = "top center",
+  mobilePosition,
+  parallax = false,
+}: Props) {
   useEffect(() => {
     const body = document.body;
+    const mql = window.matchMedia(MOBILE_QUERY);
+
     body.style.backgroundImage = `url('${src}')`;
     body.style.backgroundSize = "cover";
     body.style.backgroundRepeat = "no-repeat";
-    body.style.backgroundAttachment = "fixed";
+    body.style.backgroundAttachment = mql.matches ? "scroll" : "fixed";
+
+    const applyPosition = (isMobile: boolean) => {
+      if (!parallax) {
+        body.style.backgroundPosition = isMobile
+          ? (mobilePosition ?? position)
+          : position;
+      }
+      body.style.backgroundAttachment = isMobile ? "scroll" : "fixed";
+    };
 
     if (!parallax) {
-      body.style.backgroundPosition = "top center";
+      applyPosition(mql.matches);
+
+      const onChange = (e: MediaQueryListEvent) => applyPosition(e.matches);
+      mql.addEventListener("change", onChange);
+
       return () => {
+        mql.removeEventListener("change", onChange);
         body.style.backgroundImage = "";
         body.style.backgroundSize = "";
         body.style.backgroundRepeat = "";
@@ -46,7 +73,7 @@ export default function PageBackground({ src = "/images/bg-home.webp", parallax 
       body.style.backgroundAttachment = "";
       body.style.backgroundPosition = "";
     };
-  }, [src, parallax]);
+  }, [src, position, mobilePosition, parallax]);
 
   return null;
 }
