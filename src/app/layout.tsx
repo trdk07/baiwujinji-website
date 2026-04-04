@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import FloatingLine from "@/components/FloatingLine";
 import ScrollReveal from "@/components/ScrollReveal";
 import TabTitle from "@/components/TabTitle";
-import PageBackground from "@/components/PageBackground";
 
 const notoSans = Noto_Sans_TC({
   subsets: ["latin"],
