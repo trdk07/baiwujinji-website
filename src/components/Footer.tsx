@@ -32,6 +32,7 @@ export default function Footer() {
               <Link href="/cases" className="text-sm text-[#B8B0A6] hover:text-white transition-colors">真實案例</Link>
               <Link href="/blog" className="text-sm text-[#B8B0A6] hover:text-white transition-colors">部落格</Link>
               <Link href="/faq" className="text-sm text-[#B8B0A6] hover:text-white transition-colors">常見問題</Link>
+              <Link href="/contact" className="text-sm text-[#B8B0A6] hover:text-white transition-colors">聯絡我們</Link>
               <Link href="/privacy" className="text-sm text-[#B8B0A6] hover:text-white transition-colors">隱私權政策</Link>
             </nav>
           </div>
