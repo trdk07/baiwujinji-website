@@ -13,7 +13,7 @@ export default function FAQPage() {
   return (
     <>
       <FAQPageJsonLd items={faqItems} />
-      <PageBackground src="/images/bg-about.webp" />
+      <PageBackground src="/images/bg-about.webp" position="center 40%" mobilePosition="40% center" />
 
       {/* Hero */}
       <section className="pt-40 pb-20 px-6 md:px-12 max-w-[1100px] mx-auto text-center">

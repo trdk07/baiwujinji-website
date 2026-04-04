@@ -8,7 +8,7 @@ export const metadata = {
 export default function PrivacyPage() {
   return (
     <>
-      <PageBackground src="/images/bg-about.webp" />
+      <PageBackground src="/images/bg-about.webp" position="center 40%" mobilePosition="40% center" />
 
       <div className="pt-[180px] pb-24 px-6 md:px-12 max-w-[800px] mx-auto">
         <div className="rv text-xs text-ink-dim tracking-[5px] uppercase mb-4">privacy policy</div>
