@@ -47,19 +47,21 @@ export default function ServicesPage() {
             <Link
               key={cat.slug}
               href={`/services/${cat.slug}`}
-              className="scard rv relative overflow-hidden bg-bg-card/70 backdrop-blur-[8px] border border-sand/18 rounded-[14px] p-10 no-underline text-inherit"
+              className="scard rv relative overflow-hidden bg-bg-card/70 backdrop-blur-[8px] border border-sand/18 rounded-[14px] p-10 no-underline text-inherit min-h-[280px] flex flex-col"
               style={{ "--card-color": cat.color } as React.CSSProperties}
             >
-              {cat.badge && (
-                <div className="scard-badge">{cat.badge}</div>
-              )}
+              <div className="h-[24px] mb-3">
+                {cat.badge && (
+                  <span className="scard-badge">{cat.badge}</span>
+                )}
+              </div>
               <div className="text-[15px] font-bold tracking-[2px] mb-5" style={{ color: cat.color }}>
                 /{String(i + 1).padStart(2, "0")}
               </div>
               <h3 className="scard-title text-serif text-[22px] font-semibold mb-3 tracking-wide">
                 {cat.title}
               </h3>
-              <p className="scard-tagline text-sm md:text-base text-ink-sub leading-relaxed mb-3">
+              <p className="scard-tagline text-sm md:text-base text-ink-sub leading-relaxed mb-3 flex-1">
                 {cat.tagline}
               </p>
               <span className="text-sm text-ink-dim block mb-6">
