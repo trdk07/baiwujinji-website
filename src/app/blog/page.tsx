@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { blogPosts } from "@/data/blog-posts";
 import PageBackground from "@/components/PageBackground";
+import { LINE_URL, EMAIL } from "@/lib/constants";
 
 export const metadata = {
   title: "部落格 | 百無禁忌研究所",
@@ -78,7 +79,7 @@ export default function BlogPage() {
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
           <a
-            href="https://lin.ee/tiEYURo"
+            href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-seal text-white px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal-hover hover:-translate-y-0.5 transition-all"
@@ -86,7 +87,7 @@ export default function BlogPage() {
             加 LINE 聊聊
           </a>
           <a
-            href="mailto:fortunetell99@gmail.com"
+            href={`mailto:${EMAIL}`}
             className="inline-block border border-seal text-seal px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal hover:text-white hover:-translate-y-0.5 transition-all"
           >
             Email 聯繫

@@ -1,11 +1,18 @@
 import Link from "next/link";
-import { serviceCategories } from "@/data/service-map";
+import { serviceCategories, getCategoryBySlug } from "@/data/service-map";
 import { getFeaturedCases } from "@/data/case-studies";
 import Counter from "@/components/Counter";
 import Marquee from "@/components/Marquee";
 import EasterEgg from "@/components/EasterEgg";
 import CaseCard from "@/components/CaseCard";
 import PageBackground from "@/components/PageBackground";
+import { LINE_URL, EMAIL } from "@/lib/constants";
+
+// 首頁服務預覽順序：求財開路 C 位優先
+const homeFeaturedSlugs = ["zhaocai", "mingli", "ganqing"];
+const homeFeaturedCategories = homeFeaturedSlugs
+  .map((s) => getCategoryBySlug(s))
+  .filter(Boolean) as typeof serviceCategories;
 
 export default function Home() {
   return (
@@ -26,17 +33,25 @@ export default function Home() {
             人生卡住的時候，<span className="em">找對人聊聊</span>
           </h1>
           <p className="text-lg text-ink-sub max-w-[480px] mx-auto mb-4 leading-9 tracking-wider">
-            人生顧問 ／ <span className="em-sub">法事</span>服務 ／ 感情修復
+            <span className="em-sub">求財開路</span> ／ 人生顧問 ／ 感情修復
           </p>
-          <p className="text-base text-ink-dim max-w-[480px] mx-auto mb-11 leading-8">
-            先好好把自己心裡那團迷霧一起釐清，也許看見問題之後就不是那麼困難。
+          <p className="text-base text-ink-dim max-w-[480px] mx-auto mb-8 leading-8">
+            錢留不住、財路不順？也許不是你不夠努力，是需要有人幫你打通。
           </p>
-          <a
-            href="#services"
-            className="bg-seal text-white px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal-hover hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(194,59,59,0.2)] transition-all"
-          >
-            瞭解更多
-          </a>
+          <div className="flex gap-3 justify-center flex-wrap">
+            <Link
+              href="/services/zhaocai"
+              className="bg-seal text-white px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal-hover hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(194,59,59,0.2)] transition-all"
+            >
+              了解求財服務
+            </Link>
+            <a
+              href="#services"
+              className="border border-sand text-ink-sub px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:border-ink-dim hover:text-ink transition-all"
+            >
+              所有服務
+            </a>
+          </div>
         </div>
       </section>
 
@@ -117,12 +132,21 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {serviceCategories.slice(0, 3).map((cat, i) => (
+          {homeFeaturedCategories.map((cat, i) => (
             <Link
               key={cat.slug}
               href={`/services/${cat.slug}`}
-              className="scard rv relative overflow-hidden bg-bg-card/70 backdrop-blur-[8px] border border-sand/18 rounded-[14px] p-9 no-underline text-inherit"
+              className={`scard rv relative overflow-hidden bg-bg-card/70 backdrop-blur-[8px] border rounded-[14px] p-9 no-underline text-inherit ${
+                i === 0
+                  ? "border-seal/25 ring-1 ring-seal/10"
+                  : "border-sand/18"
+              }`}
             >
+              {i === 0 && (
+                <span className="absolute top-0 right-0 text-[10px] text-white bg-seal px-3 py-1 rounded-bl-lg tracking-wider font-medium">
+                  熱門
+                </span>
+              )}
               <div className="text-[11px] text-sand tracking-[2px] mb-5">
                 /{String(i + 1).padStart(2, "0")}
               </div>
@@ -181,7 +205,7 @@ export default function Home() {
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
           <a
-            href="https://lin.ee/tiEYURo"
+            href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-seal text-white px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal-hover hover:-translate-y-0.5 transition-all"
@@ -189,7 +213,7 @@ export default function Home() {
             加 LINE 聊聊
           </a>
           <a
-            href="mailto:fortunetell99@gmail.com"
+            href={`mailto:${EMAIL}`}
             className="inline-block border border-seal text-seal px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal hover:text-white hover:-translate-y-0.5 transition-all"
           >
             Email 聯繫

@@ -1,4 +1,5 @@
 import PageBackground from "@/components/PageBackground";
+import { LINE_URL } from "@/lib/constants";
 
 export const metadata = {
   title: "隱私權政策 | 百無禁忌研究所",
@@ -52,7 +53,7 @@ export default function PrivacyPage() {
             <p className="text-base text-ink-sub leading-9">
               如果您對隱私權政策有任何疑問，歡迎透過{" "}
               <a
-                href="https://lin.ee/tiEYURo"
+                href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-seal hover:underline"

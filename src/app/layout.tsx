@@ -6,6 +6,9 @@ import Footer from "@/components/Footer";
 import FloatingLine from "@/components/FloatingLine";
 import ScrollReveal from "@/components/ScrollReveal";
 import TabTitle from "@/components/TabTitle";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { OrganizationJsonLd } from "@/components/JsonLd";
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 
 const notoSans = Noto_Sans_TC({
   subsets: ["latin"],
@@ -22,12 +25,33 @@ const notoSerif = Noto_Serif_TC({
 });
 
 export const metadata: Metadata = {
-  title: "百無禁忌研究所 — 人生顧問・法事服務・感情修復",
-  description:
-    "人生本來就有無限可能。百無禁忌研究所提供人生顧問、法事服務、感情修復，先好好把心裡那團迷霧釐清，看見問題之後就不是那麼困難。",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — 人生顧問・法事服務・感情修復`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
   icons: {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "zh_TW",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — 人生顧問・法事服務・感情修復`,
+    description: SITE_DESCRIPTION,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} — 人生顧問・法事服務・感情修復`,
+    description: SITE_DESCRIPTION,
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: SITE_URL,
   },
 };
 
@@ -39,6 +63,8 @@ export default function RootLayout({
   return (
     <html lang="zh-TW" className={`${notoSans.variable} ${notoSerif.variable}`} suppressHydrationWarning>
       <body>
+        <GoogleAnalytics />
+        <OrganizationJsonLd />
         <div id="app" style={{ position: "relative", zIndex: 1 }}>
           <Navbar />
           <main>{children}</main>

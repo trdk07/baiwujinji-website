@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import PageBackground from "@/components/PageBackground";
+import { LINE_URL, EMAIL } from "@/lib/constants";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -13,7 +14,7 @@ export default function ContactPage() {
     const body = encodeURIComponent(
       `姓名：${name}\n信箱：${email}\n\n${message}`
     );
-    window.location.href = `mailto:fortunetell99@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -96,7 +97,7 @@ export default function ContactPage() {
             不想寄信？直接加 LINE 聊更快。
           </p>
           <a
-            href="https://lin.ee/tiEYURo"
+            href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border border-sand text-ink-sub px-8 py-3 rounded-md text-[15px] tracking-wide hover:border-ink-dim hover:text-ink transition-all"
