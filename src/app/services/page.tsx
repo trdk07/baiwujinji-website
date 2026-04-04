@@ -42,32 +42,34 @@ export default function ServicesPage() {
           看看哪個跟你的狀況最像
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[1fr]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {serviceCategories.map((cat, i) => (
             <Link
               key={cat.slug}
               href={`/services/${cat.slug}`}
-              className="scard rv relative overflow-hidden bg-bg-card/70 backdrop-blur-[8px] border border-sand/18 rounded-[14px] p-10 no-underline text-inherit min-h-[280px] flex flex-col"
+              className={`scard rv relative overflow-hidden bg-bg-card/70 backdrop-blur-[8px] border border-sand/18 rounded-[14px] p-10 no-underline text-inherit flex flex-col${cat.featured ? " scard-featured" : ""}`}
               style={{ "--card-color": cat.color } as React.CSSProperties}
             >
-              <div className="h-[24px] mb-3">
+              <div className="flex items-center gap-3 mb-5 relative z-[1]">
+                <span className="text-[15px] font-bold tracking-[2px]" style={{ color: cat.color }}>
+                  /{String(i + 1).padStart(2, "0")}
+                </span>
                 {cat.badge && (
-                  <span className="scard-badge">{cat.badge}</span>
+                  <span className="scard-badge" style={{ "--badge-color": cat.color } as React.CSSProperties}>
+                    {cat.badge}
+                  </span>
                 )}
               </div>
-              <div className="text-[15px] font-bold tracking-[2px] mb-5" style={{ color: cat.color }}>
-                /{String(i + 1).padStart(2, "0")}
-              </div>
-              <h3 className="scard-title text-serif text-[22px] font-semibold mb-3 tracking-wide">
+              <h3 className="scard-title text-serif text-[22px] font-semibold mb-3 tracking-wide relative z-[1]">
                 {cat.title}
               </h3>
-              <p className="scard-tagline text-sm md:text-base text-ink-sub leading-relaxed mb-3 flex-1">
+              <p className="scard-tagline text-sm md:text-base text-ink-sub leading-relaxed mb-3 flex-1 relative z-[1]">
                 {cat.tagline}
               </p>
-              <span className="text-sm text-ink-dim block mb-6">
+              <span className="text-sm text-ink-dim block mb-6 relative z-[1]">
                 {cat.articles.length} 項服務
               </span>
-              <span className="scard-arrow absolute bottom-7 right-7">
+              <span className="scard-arrow absolute bottom-7 right-7 z-[1]">
                 →
               </span>
             </Link>

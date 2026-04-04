@@ -23,6 +23,12 @@ export interface CaseStudy {
   followUp?: string;
   /** Screenshot image path (for screenshot format) */
   imagePath?: string;
+  /** Teacher reply message (for screenshot format) */
+  teacherReply?: string;
+  /** Chat date label (for screenshot format) */
+  chatDate?: string;
+  /** Chat time label (for screenshot format) */
+  chatTime?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -127,6 +133,9 @@ export const caseStudies: CaseStudy[] = [
     problem: "什麼都不順，覺得自己在走衰運",
     service: "轉運法事",
     content: "老師謝謝你，最近真的有比較順了，上禮拜還接到一個大案子 🙏",
+    teacherReply: "很好，繼續保持這個狀態，有什麼變化再跟我說 👍",
+    chatDate: "3月15日",
+    chatTime: "下午 2:34",
     imagePath: "/images/cases/line-luck.png",
   },
   {
@@ -138,6 +147,9 @@ export const caseStudies: CaseStudy[] = [
     problem: "業績一直達不到目標",
     service: "五方貴人法",
     content: "報告老師！這個月業績終於破紀錄了，而且有三個客戶是別人轉介紹的 😭",
+    teacherReply: "恭喜！貴人運開了，接下來好好把握這些機會",
+    chatDate: "2月28日",
+    chatTime: "晚上 9:12",
     imagePath: "/images/cases/line-wealth.png",
   },
   {
@@ -149,6 +161,9 @@ export const caseStudies: CaseStudy[] = [
     problem: "身邊完全沒有對象",
     service: "招桃花法事",
     content: "老師我要跟你說一件事！！我上禮拜被告白了！！對方超認真的那種！！",
+    teacherReply: "哈哈恭喜妳～先慢慢相處，不要急，有問題再來聊",
+    chatDate: "4月2日",
+    chatTime: "下午 5:47",
     imagePath: "/images/cases/line-love.png",
   },
   {
@@ -160,6 +175,9 @@ export const caseStudies: CaseStudy[] = [
     problem: "和婆婆關係很差，影響到婚姻",
     service: "家庭和睦法術",
     content: "老師你不會相信，我婆婆昨天居然主動打電話來說想一起吃飯，我嚇到",
+    teacherReply: "很好的開始，妳就自然地去，不用想太多",
+    chatDate: "1月20日",
+    chatTime: "上午 10:08",
     imagePath: "/images/cases/line-family.png",
   },
 
