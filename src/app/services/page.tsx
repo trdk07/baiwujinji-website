@@ -47,7 +47,7 @@ export default function ServicesPage() {
             <Link
               key={cat.slug}
               href={`/services/${cat.slug}`}
-              className={`scard rv relative overflow-hidden bg-bg-card/70 backdrop-blur-[8px] border border-sand/18 rounded-[14px] p-10 no-underline text-inherit${cat.featured ? " scard-featured" : ""}`}
+              className="scard rv relative overflow-hidden bg-bg-card/70 backdrop-blur-[8px] border border-sand/18 rounded-[14px] p-10 no-underline text-inherit"
               style={{ "--card-color": cat.color } as React.CSSProperties}
             >
               {cat.badge && (
