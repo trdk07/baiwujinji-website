@@ -130,26 +130,7 @@ body::after {
 .scard:hover .scard-arrow {
   background: rgba(194, 59, 59, 0.14);
 }
-/* Featured card (求財開路) */
-.scard-featured {
-  --card-color: var(--color-ochre);
-}
-@media (min-width: 640px) {
-  .scard-featured {
-    grid-column: span 2;
-  }
-  .scard-featured .scard-title {
-    font-size: 32px;
-  }
-  .scard-featured .scard-tagline {
-    font-size: 16px;
-  }
-  .scard-featured .scard-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-}
+
 /* Badge */
 .scard-badge {
   display: inline-block;
