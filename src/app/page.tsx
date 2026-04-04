@@ -31,28 +31,12 @@ export default function Home() {
           <p className="text-base text-ink-dim max-w-[480px] mx-auto mb-11 leading-8">
             先好好把自己心裡那團迷霧一起釐清，也許看見問題之後就不是那麼困難。
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <a
-              href="#services"
-              className="bg-seal text-white px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal-hover hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(194,59,59,0.2)] transition-all"
-            >
-              瞭解更多
-            </a>
-            <a
-              href="https://lin.ee/tiEYURo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-sand text-ink-sub px-8 py-3 rounded-md text-[15px] tracking-wide hover:border-ink-dim hover:text-ink transition-all"
-            >
-              加 LINE 諮詢
-            </a>
-            <a
-              href="mailto:fortunetell99@gmail.com"
-              className="border border-sand text-ink-sub px-8 py-3 rounded-md text-[15px] tracking-wide hover:border-ink-dim hover:text-ink transition-all"
-            >
-              Email 聯繫
-            </a>
-          </div>
+          <a
+            href="#services"
+            className="bg-seal text-white px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal-hover hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(194,59,59,0.2)] transition-all"
+          >
+            瞭解更多
+          </a>
         </div>
       </section>
 
