@@ -70,6 +70,16 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title.split("｜")[1]}
           </p>
         )}
+
+        {post.image && (
+          <div className="rv mt-8 rounded-xl overflow-hidden">
+            <img
+              src={post.image}
+              alt={post.title.split("｜")[0]}
+              className="w-full h-auto"
+            />
+          </div>
+        )}
       </div>
 
       <article

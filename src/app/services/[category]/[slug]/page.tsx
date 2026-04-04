@@ -72,6 +72,16 @@ export default async function ArticlePage({ params }: Props) {
             {article.title.split("｜")[1]}
           </p>
         )}
+
+        {article.image && (
+          <div className="rv mt-8 rounded-xl overflow-hidden">
+            <img
+              src={article.image}
+              alt={article.title.split("｜")[0]}
+              className="w-full h-auto"
+            />
+          </div>
+        )}
       </div>
 
       {/* Article content */}
