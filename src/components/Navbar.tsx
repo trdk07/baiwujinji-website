@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LINE_URL, EMAIL, trackLineCTA } from "@/lib/constants";
+import { LINE_URL, EMAIL } from "@/lib/constants";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

@@ -62,6 +62,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-TW" className={`${notoSans.variable} ${notoSerif.variable}`} suppressHydrationWarning>
+      <head>
+        <link rel="preload" href="/images/bg-home.webp" as="image" type="image/webp" />
+      </head>
       <body>
         <GoogleAnalytics />
         <OrganizationJsonLd />

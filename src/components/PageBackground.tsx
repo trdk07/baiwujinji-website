@@ -8,7 +8,7 @@ interface Props {
   parallax?: boolean;
 }
 
-export default function PageBackground({ src = "/images/bg-home.png", parallax = false }: Props) {
+export default function PageBackground({ src = "/images/bg-home.webp", parallax = false }: Props) {
   useEffect(() => {
     const body = document.body;
     body.style.backgroundImage = `url('${src}')`;
