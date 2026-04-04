@@ -100,6 +100,7 @@ body::after {
   background: var(--card-color);
   border-radius: 14px 14px 0 0;
   transition: height 0.3s ease;
+  z-index: 1;
 }
 .scard:hover::before {
   height: 6px;
@@ -111,7 +112,7 @@ body::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--card-color) 12%, transparent) 0%, transparent 50%);
+  background: linear-gradient(175deg, color-mix(in srgb, var(--card-color) 12%, transparent) 0%, transparent 40%);
   pointer-events: none;
   border-radius: 14px;
 }
@@ -129,18 +130,38 @@ body::after {
 }
 .scard:hover .scard-arrow {
   background: rgba(194, 59, 59, 0.14);
+  transform: translateX(4px);
 }
-
-/* Badge */
+/* Featured card (求財開路) */
+@media (min-width: 640px) {
+  .scard-featured {
+    grid-column: span 2;
+    border-width: 1.5px;
+  }
+  .scard-featured .scard-title {
+    font-size: 32px;
+  }
+  .scard-featured .scard-tagline {
+    font-size: 16px;
+  }
+  .scard-featured .scard-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+/* Badge pill */
 .scard-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: 11px;
-  padding: 3px 10px;
-  border-radius: 4px;
-  background: rgba(194, 59, 59, 0.08);
-  color: var(--color-seal);
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--badge-color, var(--card-color)) 12%, transparent);
+  color: color-mix(in srgb, var(--badge-color, var(--card-color)) 80%, #2C2C2C);
   letter-spacing: 0.5px;
-  margin-bottom: 12px;
+  white-space: nowrap;
 }
 
 /* Smooth scrollbar */
