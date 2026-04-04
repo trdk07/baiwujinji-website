@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!cat) return {};
   return {
     title: `${cat.title} | 百無禁忌研究所`,
-    description: cat.tagline,
+    description: cat.taglineText,
   };
 }
 

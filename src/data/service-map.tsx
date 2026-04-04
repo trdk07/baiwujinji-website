@@ -8,6 +8,8 @@ export interface ServiceCategory {
   slug: string;
   title: string;
   tagline: ReactNode;
+  /** Plain text version for SEO metadata */
+  taglineText: string;
   /** Optional cover image in /public/images/services/ */
   image?: string;
   articles: ServiceArticle[];
@@ -28,6 +30,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "mingli",
     title: "方向不明",
     tagline: <>看不清下一步的時候，透過<span className="em-sub">命盤</span>幫你把<span className="em-sub">地圖</span>攤開來看。</>,
+    taglineText: "看不清下一步的時候，透過命盤幫你把地圖攤開來看。",
     image: "/images/services/icon-mingli.png",
     articles: [
       { slug: "consultation", title: "命理諮詢｜找不到人生方向？18 年經驗幫你理出頭緒", shortTitle: "命理諮詢", contentFile: "consultation.md" },
@@ -41,6 +44,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "zhuanyun",
     title: "諸事不順",
     tagline: <>什麼都卡住的時候，也許不是你的問題，是<span className="em-sub">運勢</span>在走低谷。</>,
+    taglineText: "什麼都卡住的時候，也許不是你的問題，是運勢在走低谷。",
     image: "/images/services/icon-zhuanyun.png",
     articles: [
       { slug: "turning-luck", title: "轉運法事｜低谷走不出來，有時候不是你不夠努力", shortTitle: "轉運法事", contentFile: "turning-luck.md" },
@@ -50,6 +54,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "zhaocai",
     title: "求財開路",
     tagline: <>錢留不住或進不來，有時候跟努力無關，是<span className="em-sub">財路</span>需要打通。</>,
+    taglineText: "錢留不住或進不來，有時候跟努力無關，是財路需要打通。",
     image: "/images/services/icon-zhaocai.png",
     articles: [
       { slug: "five-nobles", title: "五方貴人法｜為什麼機會總是擦身而過？", shortTitle: "五方貴人法", contentFile: "five-nobles.md" },
@@ -66,6 +71,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "shiye",
     title: "事業受阻",
     tagline: <>職場卡住或生意不好，有時候不是策略問題，是<span className="em-sub">局勢</span>需要調整。</>,
+    taglineText: "職場卡住或生意不好，有時候不是策略問題，是局勢需要調整。",
     image: "/images/services/icon-shiye.png",
     articles: [
       { slug: "career-noble", title: "職場貴人法術｜升職加薪總輪不到你？", shortTitle: "職場貴人", contentFile: "career-noble.md" },
@@ -76,6 +82,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "zhaohua",
     title: "桃花遲遲",
     tagline: <>不是沒人要，是<span className="em-sub">緣分</span>還沒對上。幫你把感情的門打開。</>,
+    taglineText: "不是沒人要，是緣分還沒對上。幫你把感情的門打開。",
     image: "/images/services/icon-zhaohua.png",
     articles: [
       { slug: "attract-love", title: "招桃花法術｜單身太久不是沒人要，是緣分還沒對上", shortTitle: "招桃花", contentFile: "attract-love.md" },
@@ -87,6 +94,7 @@ export const serviceCategories: ServiceCategory[] = [
     slug: "ganqing",
     title: "挽回修復",
     tagline: <>挽回、第三者、家庭關係，先判斷<span className="em-sub">值不值得</span>，再決定怎麼做。</>,
+    taglineText: "挽回、第三者、家庭關係，先判斷值不值得，再決定怎麼做。",
     image: "/images/services/icon-ganqing.png",
     articles: [
       { slug: "love-recovery", title: "感情挽回法術｜分手後還有機會嗎？法事能做什麼？", shortTitle: "感情挽回", contentFile: "love-recovery.md" },
