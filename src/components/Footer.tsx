@@ -92,6 +92,12 @@ export default function Footer() {
               LINE
             </a>
             <a
+              href="mailto:fortunetell99@gmail.com"
+              className="text-[11px] text-[#8A8279] hover:text-[#E05555] transition-colors tracking-wide"
+            >
+              Email
+            </a>
+            <a
               href="https://www.threads.com/@fate_future"
               target="_blank"
               rel="noopener noreferrer"

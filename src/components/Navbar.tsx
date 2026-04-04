@@ -92,14 +92,22 @@ export default function Navbar() {
         >
           部落格
         </Link>
-        <a
-          href="https://lin.ee/tiEYURo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-seal text-white px-5 py-2 rounded-md text-[13px] font-medium tracking-wide hover:bg-seal-hover transition-colors"
-        >
-          LINE 諮詢
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="mailto:fortunetell99@gmail.com"
+            className="border border-seal text-seal px-4 py-2 rounded-md text-[13px] font-medium tracking-wide hover:bg-seal hover:text-white transition-colors"
+          >
+            Email
+          </a>
+          <a
+            href="https://lin.ee/tiEYURo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-seal text-white px-5 py-2 rounded-md text-[13px] font-medium tracking-wide hover:bg-seal-hover transition-colors"
+          >
+            LINE 諮詢
+          </a>
+        </div>
       </div>
 
       {/* Mobile menu button */}
@@ -126,14 +134,22 @@ export default function Navbar() {
             <Link href="/services" onClick={() => setMenuOpen(false)} className="block text-ink-sub hover:text-ink">服務</Link>
             <Link href="/cases" onClick={() => setMenuOpen(false)} className="block text-ink-sub hover:text-ink">案例</Link>
             <Link href="/blog" onClick={() => setMenuOpen(false)} className="block text-ink-sub hover:text-ink">部落格</Link>
-            <a
-              href="https://lin.ee/tiEYURo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-seal text-white px-5 py-2.5 rounded-md text-sm font-medium text-center"
-            >
-              LINE 諮詢
-            </a>
+            <div className="flex gap-2">
+              <a
+                href="mailto:fortunetell99@gmail.com"
+                className="flex-1 block border border-seal text-seal px-5 py-2.5 rounded-md text-sm font-medium text-center"
+              >
+                Email
+              </a>
+              <a
+                href="https://lin.ee/tiEYURo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 block bg-seal text-white px-5 py-2.5 rounded-md text-sm font-medium text-center"
+              >
+                LINE 諮詢
+              </a>
+            </div>
           </div>
         </div>
       )}
