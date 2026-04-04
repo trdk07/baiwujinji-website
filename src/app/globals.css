@@ -123,8 +123,8 @@ body::after {
   color: var(--color-seal);
   font-weight: 500;
 }
-/* 關鍵字強調 — 次強調（暖金棕） */
+/* 關鍵字強調 — 次強調（磚紅/赭石） */
 .em-sub {
-  color: var(--color-ochre);
+  color: #A0522D;
   font-weight: 500;
 }
