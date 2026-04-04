@@ -10,7 +10,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageBackground src="/images/bg-about.jpg" />
+      <PageBackground src="/images/bg-about.webp" />
       {/* Hero */}
       <div className="pt-[180px] pb-24 px-6 md:px-12 max-w-[800px] mx-auto">
         <div className="rv text-xs text-ink-dim tracking-[5px] uppercase mb-4">about</div>

@@ -72,7 +72,7 @@ export default async function ArticlePage({ params }: Props) {
         url={`${SITE_URL}/services/${cat.slug}/${article.slug}`}
         image={article.image}
       />
-      <PageBackground src="/images/bg-services.jpg" />
+      <PageBackground src="/images/bg-services.webp" />
       <div className="pt-[160px] pb-16 px-6 md:px-12 max-w-[800px] mx-auto">
         {/* Breadcrumb */}
         <nav className="rv flex items-center gap-2 text-sm text-ink-dim mb-8 flex-wrap">
