@@ -32,6 +32,16 @@ export default function ServicesPage() {
 
       {/* All service categories */}
       <section className="py-24 px-6 md:px-12 max-w-[1100px] mx-auto">
+        <div className="rv text-xs text-ink-dim tracking-[5px] uppercase mb-3">
+          services
+        </div>
+        <h2 className="rv text-serif text-[clamp(24px,3.5vw,32px)] font-semibold mb-4">
+          服務項目
+        </h2>
+        <p className="rv text-base md:text-lg text-ink-sub max-w-[540px] leading-8 mb-12">
+          看看哪個跟你的狀況最像
+        </p>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {serviceCategories.map((cat, i) => (
             <Link
