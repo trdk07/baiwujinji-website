@@ -106,6 +106,12 @@ export default async function ArticlePage({ params }: Props) {
         >
           加 LINE 聊聊
         </a>
+        <a
+          href="mailto:fortunetell99@gmail.com"
+          className="inline-block border border-seal text-seal px-6 py-2.5 rounded-md text-sm font-medium tracking-wide hover:bg-seal hover:text-white transition-colors ml-3"
+        >
+          Email 聯繫
+        </a>
       </div>
 
       {/* Related articles */}

@@ -107,14 +107,22 @@ export default function AboutPage() {
         <p className="text-base md:text-lg text-ink-sub mb-8 leading-8">
           不用準備什麼，也不用先想好問題。<br />加 LINE 跟我們說你的狀況就好。
         </p>
-        <a
-          href="https://lin.ee/tiEYURo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-seal text-white px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal-hover hover:-translate-y-0.5 transition-all"
-        >
-          加 LINE 諮詢
-        </a>
+        <div className="flex gap-3 justify-center flex-wrap">
+          <a
+            href="https://lin.ee/tiEYURo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-seal text-white px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal-hover hover:-translate-y-0.5 transition-all"
+          >
+            加 LINE 諮詢
+          </a>
+          <a
+            href="mailto:fortunetell99@gmail.com"
+            className="inline-block border border-seal text-seal px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal hover:text-white hover:-translate-y-0.5 transition-all"
+          >
+            Email 聯繫
+          </a>
+        </div>
       </div>
     </>
   );

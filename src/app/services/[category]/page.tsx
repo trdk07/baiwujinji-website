@@ -105,14 +105,22 @@ export default async function CategoryPage({ params }: Props) {
         <p className="text-base md:text-lg text-ink-sub mb-8 leading-8">
           加 LINE 跟我們說你的狀況，我們幫你判斷。
         </p>
-        <a
-          href="https://lin.ee/tiEYURo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-seal text-white px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal-hover transition-all"
-        >
-          加 LINE 聊聊
-        </a>
+        <div className="flex gap-3 justify-center flex-wrap">
+          <a
+            href="https://lin.ee/tiEYURo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-seal text-white px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal-hover transition-all"
+          >
+            加 LINE 聊聊
+          </a>
+          <a
+            href="mailto:fortunetell99@gmail.com"
+            className="inline-block border border-seal text-seal px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal hover:text-white transition-all"
+          >
+            Email 聯繫
+          </a>
+        </div>
       </div>
     </>
   );

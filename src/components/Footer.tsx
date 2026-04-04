@@ -13,14 +13,22 @@ export default function Footer() {
               天官賜福，<span className="text-[#E05555] font-medium">百無禁忌</span>，諸事皆宜。<br/>
               人生本來就有<span className="text-[#D4956B] font-medium">無限可能</span>。
             </p>
-            <a
-              href="https://lin.ee/tiEYURo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-seal text-white px-5 py-2 rounded-md text-[13px] font-medium tracking-wide hover:bg-seal-hover transition-colors"
-            >
-              加 LINE 聊聊
-            </a>
+            <div className="flex gap-2 flex-wrap">
+              <a
+                href="https://lin.ee/tiEYURo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-seal text-white px-5 py-2 rounded-md text-[13px] font-medium tracking-wide hover:bg-seal-hover transition-colors"
+              >
+                加 LINE 聊聊
+              </a>
+              <a
+                href="mailto:fortunetell99@gmail.com"
+                className="inline-block border border-seal text-seal px-5 py-2 rounded-md text-[13px] font-medium tracking-wide hover:bg-seal hover:text-white transition-colors"
+              >
+                Email 聯繫
+              </a>
+            </div>
           </div>
 
           {/* Navigation */}
