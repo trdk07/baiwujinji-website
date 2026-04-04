@@ -19,13 +19,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, slug } = await params;
   const result = getArticle(category, slug);
   if (!result) return {};
-  const title = result.article.title.split("｜")[0];
-  const description = result.article.title.split("｜")[1] || result.article.title;
+  const title = result.article.seoTitle || result.article.title.split("｜")[0];
+  const description = result.article.seoDescription || result.article.title.split("｜")[1] || result.article.title;
   return {
     title,
     description,
     openGraph: {
-      title: `${result.article.title} | ${SITE_NAME}`,
+      title: `${title} | ${SITE_NAME}`,
       description,
       url: `${SITE_URL}/services/${category}/${slug}`,
       ...(result.article.image && { images: [{ url: result.article.image }] }),

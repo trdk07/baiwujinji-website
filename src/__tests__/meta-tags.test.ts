@@ -19,24 +19,37 @@ describe("Meta Tags 長度檢查", () => {
 
   it("服務分類頁 title 不應超過限制", () => {
     for (const cat of serviceCategories) {
-      const title = `${cat.title} | ${SITE_NAME}`;
+      const title = cat.seoTitle || `${cat.title} | ${SITE_NAME}`;
       expect(title.length, `分類「${cat.title}」title 過長：${title.length} 字元`).toBeLessThanOrEqual(MAX_TITLE_LENGTH);
     }
   });
 
   it("服務分類頁 description 不應超過限制", () => {
     for (const cat of serviceCategories) {
+      const desc = cat.seoDescription || cat.taglineText;
       expect(
-        cat.taglineText.length,
-        `分類「${cat.title}」description 過長：${cat.taglineText.length} 字元`
+        desc.length,
+        `分類「${cat.title}」description 過長：${desc.length} 字元`
       ).toBeLessThanOrEqual(MAX_DESCRIPTION_LENGTH);
+    }
+  });
+
+  it("服務文章頁 title 不應超過限制", () => {
+    for (const cat of serviceCategories) {
+      for (const article of cat.articles) {
+        const title = article.seoTitle || article.title.split("｜")[0];
+        expect(
+          title.length,
+          `文章「${article.shortTitle}」title 過長：${title.length} 字元`
+        ).toBeLessThanOrEqual(MAX_TITLE_LENGTH);
+      }
     }
   });
 
   it("服務文章頁 description 不應超過限制", () => {
     for (const cat of serviceCategories) {
       for (const article of cat.articles) {
-        const desc = article.title.split("｜")[1] || article.title;
+        const desc = article.seoDescription || article.title.split("｜")[1] || article.title;
         expect(
           desc.length,
           `文章「${article.shortTitle}」description 過長：${desc.length} 字元`

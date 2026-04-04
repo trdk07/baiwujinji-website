@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params;
   const cat = getCategoryBySlug(category);
   if (!cat) return {};
-  const title = cat.title;
-  const description = cat.taglineText;
+  const title = cat.seoTitle || cat.title;
+  const description = cat.seoDescription || cat.taglineText;
   return {
     title,
     description,

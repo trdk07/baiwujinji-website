@@ -4,8 +4,8 @@ import PageBackground from "@/components/PageBackground";
 import { LINE_URL, EMAIL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "真實案例 | 百無禁忌研究所",
-  description: "來自客戶的真實回饋與故事。每一段經歷都是真實發生的，沒有誇大、沒有包裝。",
+  title: "真實案例｜客戶回饋與故事",
+  description: "補財庫、感情挽回、命理諮詢的真實案例。每一段都是真實發生的，沒有誇大、沒有包裝，有些是客戶自己說的。",
 };
 
 export default function CasesPage() {

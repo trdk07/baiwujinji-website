@@ -1,9 +1,5 @@
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, EMAIL } from "@/lib/constants";
-
-interface JsonLdProps {
-  type: "Organization" | "Service" | "Article" | "FAQPage" | "BreadcrumbList";
-  data?: Record<string, unknown>;
-}
+import type { FAQItem } from "@/data/faq-items";
 
 function getOrganizationSchema() {
   return {
@@ -99,6 +95,28 @@ export function ArticleJsonLd({
       name: SITE_NAME,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/images/logo-v.png` },
     },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function FAQPageJsonLd({ items }: { items: FAQItem[] }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
   };
 
   return (

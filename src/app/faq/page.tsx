@@ -1,14 +1,18 @@
 import FAQ from "@/components/FAQ";
 import PageBackground from "@/components/PageBackground";
 import { LINE_URL, EMAIL } from "@/lib/constants";
+import { FAQPageJsonLd } from "@/components/JsonLd";
+import { faqItems } from "@/data/faq-items";
 
 export const metadata = {
-  title: "常見問題 | 百無禁忌研究所",
+  title: "常見問題",
+  description: "法事要到現場嗎？費用多少？做了沒效怎麼辦？百無禁忌研究所整理最常被問到的問題，一次回答你。",
 };
 
 export default function FAQPage() {
   return (
     <>
+      <FAQPageJsonLd items={faqItems} />
       <PageBackground src="/images/bg-about.jpg" />
 
       {/* Hero */}
