@@ -5,7 +5,7 @@ import PageBackground from "@/components/PageBackground";
 import { LINE_URL, EMAIL } from "@/lib/constants";
 
 export const metadata = {
-  title: "服務項目｜命理諮詢・求財法事・感情挽回",
+  title: "服務項目",
   description: "命理諮詢、補財庫、招財法事、感情挽回、轉運法事。不確定需要什麼也沒關係，加 LINE 先聊聊你的狀況。",
 };
 

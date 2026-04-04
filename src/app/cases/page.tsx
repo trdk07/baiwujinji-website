@@ -4,7 +4,7 @@ import PageBackground from "@/components/PageBackground";
 import { LINE_URL, EMAIL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "真實案例｜客戶回饋與故事",
+  title: "真實案例",
   description: "補財庫、感情挽回、命理諮詢的真實案例。每一段都是真實發生的，沒有誇大、沒有包裝，有些是客戶自己說的。",
 };
 
