@@ -132,17 +132,13 @@ body::after {
   background: rgba(194, 59, 59, 0.14);
   transform: translateX(4px);
 }
-/* Featured card (求財開路) */
+/* Featured card (求財開路) — visually distinct, same grid size */
+.scard-featured {
+  border-width: 1.5px;
+}
 @media (min-width: 640px) {
-  .scard-featured {
-    grid-column: span 2;
-    border-width: 1.5px;
-  }
   .scard-featured .scard-title {
-    font-size: 32px;
-  }
-  .scard-featured .scard-tagline {
-    font-size: 16px;
+    font-size: 28px;
   }
   .scard-featured .scard-arrow {
     width: 40px;
