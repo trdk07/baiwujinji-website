@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { LINE_URL, EMAIL, trackLineCTA } from "@/lib/constants";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -94,13 +95,13 @@ export default function Navbar() {
         </Link>
         <div className="flex items-center gap-2">
           <a
-            href="mailto:fortunetell99@gmail.com"
+            href={`mailto:${EMAIL}`}
             className="border border-seal text-seal px-4 py-2 rounded-md text-[13px] font-medium tracking-wide hover:bg-seal hover:text-white transition-colors"
           >
             Email
           </a>
           <a
-            href="https://lin.ee/tiEYURo"
+            href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-seal text-white px-5 py-2 rounded-md text-[13px] font-medium tracking-wide hover:bg-seal-hover transition-colors"
@@ -136,13 +137,13 @@ export default function Navbar() {
             <Link href="/blog" onClick={() => setMenuOpen(false)} className="block text-ink-sub hover:text-ink">部落格</Link>
             <div className="flex gap-2">
               <a
-                href="mailto:fortunetell99@gmail.com"
+                href={`mailto:${EMAIL}`}
                 className="flex-1 block border border-seal text-seal px-5 py-2.5 rounded-md text-sm font-medium text-center"
               >
                 Email
               </a>
               <a
-                href="https://lin.ee/tiEYURo"
+                href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 block bg-seal text-white px-5 py-2.5 rounded-md text-sm font-medium text-center"

@@ -1,13 +1,18 @@
 import FAQ from "@/components/FAQ";
 import PageBackground from "@/components/PageBackground";
+import { LINE_URL, EMAIL } from "@/lib/constants";
+import { FAQPageJsonLd } from "@/components/JsonLd";
+import { faqItems } from "@/data/faq-items";
 
 export const metadata = {
-  title: "常見問題 | 百無禁忌研究所",
+  title: "常見問題",
+  description: "法事要到現場嗎？費用多少？做了沒效怎麼辦？百無禁忌研究所整理最常被問到的問題，一次回答你。",
 };
 
 export default function FAQPage() {
   return (
     <>
+      <FAQPageJsonLd items={faqItems} />
       <PageBackground src="/images/bg-about.jpg" />
 
       {/* Hero */}
@@ -38,7 +43,7 @@ export default function FAQPage() {
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
           <a
-            href="https://lin.ee/tiEYURo"
+            href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-seal text-white px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal-hover hover:-translate-y-0.5 transition-all"
@@ -46,7 +51,7 @@ export default function FAQPage() {
             加 LINE 聊聊
           </a>
           <a
-            href="mailto:fortunetell99@gmail.com"
+            href={`mailto:${EMAIL}`}
             className="inline-block border border-seal text-seal px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal hover:text-white hover:-translate-y-0.5 transition-all"
           >
             Email 聯繫

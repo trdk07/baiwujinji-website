@@ -6,6 +6,8 @@ import { markdownToHtml } from "@/lib/markdown";
 import type { Metadata } from "next";
 import fs from "fs";
 import path from "path";
+import { LINE_URL, EMAIL, SITE_URL, SITE_NAME } from "@/lib/constants";
+import { BreadcrumbJsonLd, ArticleJsonLd } from "@/components/JsonLd";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -20,8 +22,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
-    title: `${post.title} | 百無禁忌研究所`,
+    title: post.title,
     description: post.excerpt,
+    openGraph: {
+      title: `${post.title} | ${SITE_NAME}`,
+      description: post.excerpt,
+      url: `${SITE_URL}/blog/${slug}`,
+      type: "article",
+      ...(post.image && { images: [{ url: post.image }] }),
+    },
   };
 }
 
@@ -45,6 +54,18 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[
+        { name: "首頁", url: SITE_URL },
+        { name: "部落格", url: `${SITE_URL}/blog` },
+        { name: post.title.split("｜")[0], url: `${SITE_URL}/blog/${post.slug}` },
+      ]} />
+      <ArticleJsonLd
+        title={post.title}
+        description={post.excerpt}
+        url={`${SITE_URL}/blog/${post.slug}`}
+        datePublished={post.date}
+        image={post.image}
+      />
       <PageBackground src="/images/bg-about.jpg" />
       <div className="pt-[160px] pb-16 px-6 md:px-12 max-w-[800px] mx-auto">
         <nav className="rv flex items-center gap-2 text-sm text-ink-dim mb-8 flex-wrap">
@@ -95,7 +116,7 @@ export default async function BlogPostPage({ params }: Props) {
           不用準備什麼，也不用先想好問題。加 LINE 跟我們說你的狀況就好。
         </p>
         <a
-          href="https://lin.ee/tiEYURo"
+          href={LINE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-seal text-white px-6 py-2.5 rounded-md text-sm font-medium tracking-wide hover:bg-seal-hover transition-colors"
@@ -103,7 +124,7 @@ export default async function BlogPostPage({ params }: Props) {
           加 LINE 聊聊
         </a>
         <a
-          href="mailto:fortunetell99@gmail.com"
+          href={`mailto:${EMAIL}`}
           className="inline-block border border-seal text-seal px-6 py-2.5 rounded-md text-sm font-medium tracking-wide hover:bg-seal hover:text-white transition-colors ml-3"
         >
           Email 聯繫

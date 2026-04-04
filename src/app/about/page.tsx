@@ -1,9 +1,10 @@
 import Counter from "@/components/Counter";
 import PageBackground from "@/components/PageBackground";
+import { LINE_URL, EMAIL } from "@/lib/constants";
 
 export const metadata = {
-  title: "關於百無禁忌 — 人生本來就有無限可能",
-  description: "天官賜福，百無禁忌。百無禁忌，諸事皆宜。人生像一場遊戲，碰到卡關的時候，認識自己、投資自己，就是破關最好的方式。",
+  title: "關於百無禁忌｜18 年命理諮詢與法事服務",
+  description: "百無禁忌研究所，18 年命理諮詢與法事經驗。不靈性恐嚇、不強迫推銷、不誇大承諾。認識自己、投資自己，是破關最好的方式。",
 };
 
 export default function AboutPage() {
@@ -109,7 +110,7 @@ export default function AboutPage() {
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
           <a
-            href="https://lin.ee/tiEYURo"
+            href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-seal text-white px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal-hover hover:-translate-y-0.5 transition-all"
@@ -117,7 +118,7 @@ export default function AboutPage() {
             加 LINE 諮詢
           </a>
           <a
-            href="mailto:fortunetell99@gmail.com"
+            href={`mailto:${EMAIL}`}
             className="inline-block border border-seal text-seal px-8 py-3 rounded-md text-[15px] font-medium tracking-wide hover:bg-seal hover:text-white hover:-translate-y-0.5 transition-all"
           >
             Email 聯繫

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { serviceCategories } from "@/data/service-map";
+import { LINE_URL, EMAIL, THREADS_URL } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -15,7 +16,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-2 flex-wrap">
               <a
-                href="https://lin.ee/tiEYURo"
+                href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-seal text-white px-5 py-2 rounded-md text-[13px] font-medium tracking-wide hover:bg-seal-hover transition-colors"
@@ -23,7 +24,7 @@ export default function Footer() {
                 加 LINE 聊聊
               </a>
               <a
-                href="mailto:fortunetell99@gmail.com"
+                href={`mailto:${EMAIL}`}
                 className="inline-block border border-seal text-seal px-5 py-2 rounded-md text-[13px] font-medium tracking-wide hover:bg-seal hover:text-white transition-colors"
               >
                 Email 聯繫
@@ -92,7 +93,7 @@ export default function Footer() {
           </div>
           <div className="flex gap-5">
             <a
-              href="https://lin.ee/tiEYURo"
+              href={LINE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[11px] text-[#8A8279] hover:text-[#E05555] transition-colors tracking-wide"
@@ -100,13 +101,13 @@ export default function Footer() {
               LINE
             </a>
             <a
-              href="mailto:fortunetell99@gmail.com"
+              href={`mailto:${EMAIL}`}
               className="text-[11px] text-[#8A8279] hover:text-[#E05555] transition-colors tracking-wide"
             >
               Email
             </a>
             <a
-              href="https://www.threads.com/@fate_future"
+              href={THREADS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[11px] text-[#8A8279] hover:text-[#E05555] transition-colors tracking-wide"

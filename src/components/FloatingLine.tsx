@@ -1,8 +1,12 @@
+"use client";
+
+import { LINE_URL, EMAIL, trackLineCTA } from "@/lib/constants";
+
 export default function FloatingLine() {
   return (
     <div className="fixed bottom-6 right-6 z-99 flex flex-col gap-3">
       <a
-        href="mailto:fortunetell99@gmail.com"
+        href={`mailto:${EMAIL}`}
         target="_blank"
         rel="noopener noreferrer"
         className="w-[52px] h-[52px] bg-seal rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(194,59,59,0.25)] hover:scale-108 hover:shadow-[0_6px_24px_rgba(194,59,59,0.35)] transition-all"
@@ -14,9 +18,10 @@ export default function FloatingLine() {
         </svg>
       </a>
       <a
-        href="https://lin.ee/tiEYURo"
+        href={LINE_URL}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackLineCTA("floating")}
         className="w-[52px] h-[52px] bg-seal rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(194,59,59,0.25)] hover:scale-108 hover:shadow-[0_6px_24px_rgba(194,59,59,0.35)] transition-all"
         title="LINE 諮詢"
       >

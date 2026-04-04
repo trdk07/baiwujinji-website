@@ -6,6 +6,8 @@ import { markdownToHtml } from "@/lib/markdown";
 import type { Metadata } from "next";
 import fs from "fs";
 import path from "path";
+import { LINE_URL, EMAIL, SITE_URL, SITE_NAME } from "@/lib/constants";
+import { BreadcrumbJsonLd, ArticleJsonLd } from "@/components/JsonLd";
 
 type Props = { params: Promise<{ category: string; slug: string }> };
 
@@ -17,9 +19,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, slug } = await params;
   const result = getArticle(category, slug);
   if (!result) return {};
+  const title = result.article.seoTitle || result.article.title.split("｜")[0];
+  const description = result.article.seoDescription || result.article.title.split("｜")[1] || result.article.title;
   return {
-    title: `${result.article.title} | 百無禁忌研究所`,
-    description: result.article.title.split("｜")[1] || result.article.title,
+    title,
+    description,
+    openGraph: {
+      title: `${title} | ${SITE_NAME}`,
+      description,
+      url: `${SITE_URL}/services/${category}/${slug}`,
+      ...(result.article.image && { images: [{ url: result.article.image }] }),
+    },
   };
 }
 
@@ -51,6 +61,17 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[
+        { name: "首頁", url: SITE_URL },
+        { name: cat.title, url: `${SITE_URL}/services/${cat.slug}` },
+        { name: article.shortTitle, url: `${SITE_URL}/services/${cat.slug}/${article.slug}` },
+      ]} />
+      <ArticleJsonLd
+        title={article.title}
+        description={article.title.split("｜")[1] || article.title}
+        url={`${SITE_URL}/services/${cat.slug}/${article.slug}`}
+        image={article.image}
+      />
       <PageBackground src="/images/bg-services.jpg" />
       <div className="pt-[160px] pb-16 px-6 md:px-12 max-w-[800px] mx-auto">
         {/* Breadcrumb */}
@@ -99,7 +120,7 @@ export default async function ArticlePage({ params }: Props) {
           不用想太多，加 LINE 跟我們說你的狀況就好。不收諮詢費，聊完再決定要不要做。
         </p>
         <a
-          href="https://lin.ee/tiEYURo"
+          href={LINE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-seal text-white px-6 py-2.5 rounded-md text-sm font-medium tracking-wide hover:bg-seal-hover transition-colors"
@@ -107,7 +128,7 @@ export default async function ArticlePage({ params }: Props) {
           加 LINE 聊聊
         </a>
         <a
-          href="mailto:fortunetell99@gmail.com"
+          href={`mailto:${EMAIL}`}
           className="inline-block border border-seal text-seal px-6 py-2.5 rounded-md text-sm font-medium tracking-wide hover:bg-seal hover:text-white transition-colors ml-3"
         >
           Email 聯繫
