@@ -4,14 +4,14 @@ import PageBackground from "@/components/PageBackground";
 import { LINE_URL, EMAIL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "真實案例｜客戶回饋與故事",
+  title: "真實案例",
   description: "補財庫、感情挽回、命理諮詢的真實案例。每一段都是真實發生的，沒有誇大、沒有包裝，有些是客戶自己說的。",
 };
 
 export default function CasesPage() {
   return (
     <>
-      <PageBackground src="/images/bg-cases.png" />
+      <PageBackground src="/images/bg-cases.webp" />
       <div className="pt-[160px] pb-16 px-6 md:px-12 max-w-[1100px] mx-auto">
         <div className="rv text-xs text-ink-dim tracking-[5px] uppercase mb-3">cases</div>
         <h1 className="rv text-serif text-[clamp(28px,4vw,38px)] font-semibold leading-snug mb-5 tracking-[2px]">

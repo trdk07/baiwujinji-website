@@ -4,7 +4,7 @@ import PageBackground from "@/components/PageBackground";
 import { LINE_URL, EMAIL } from "@/lib/constants";
 
 export const metadata = {
-  title: "部落格｜命理與法事的實用知識",
+  title: "部落格",
   description: "關於財運、感情、命理的實用文章。補財庫有用嗎？感情卡住怎麼辦？寫給正在找答案的你。",
 };
 

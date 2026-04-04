@@ -73,7 +73,3 @@ export const blogPosts: BlogPost[] = [
     date: "2025-01",
   },
 ];
-
-export function getFeaturedPosts(): BlogPost[] {
-  return blogPosts.slice(0, 3);
-}

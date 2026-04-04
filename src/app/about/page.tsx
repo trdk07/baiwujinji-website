@@ -3,7 +3,7 @@ import PageBackground from "@/components/PageBackground";
 import { LINE_URL, EMAIL } from "@/lib/constants";
 
 export const metadata = {
-  title: "關於百無禁忌｜18 年命理諮詢與法事服務",
+  title: "關於百無禁忌",
   description: "百無禁忌研究所，18 年命理諮詢與法事經驗。不靈性恐嚇、不強迫推銷、不誇大承諾。認識自己、投資自己，是破關最好的方式。",
 };
 
