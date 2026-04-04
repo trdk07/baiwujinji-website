@@ -11,7 +11,7 @@ export const metadata = {
 export default function BlogPage() {
   return (
     <>
-      <PageBackground src="/images/bg-about.jpg" />
+      <PageBackground src="/images/bg-about.webp" />
 
       {/* Hero */}
       <section className="pt-40 pb-20 px-6 md:px-12 max-w-[1100px] mx-auto text-center">
