@@ -10,8 +10,8 @@ export default function Footer() {
           <div>
             <h3 className="text-serif text-xl mb-3 tracking-wide">百無禁忌研究所</h3>
             <p className="text-sm text-[#B8B0A6] max-w-[280px] leading-7 mb-6">
-              天官賜福，百無禁忌，諸事皆宜。<br/>
-              人生本來就有無限可能。
+              天官賜福，<span className="text-[#E05555] font-medium">百無禁忌</span>，諸事皆宜。<br/>
+              人生本來就有<span className="text-[#D4956B] font-medium">無限可能</span>。
             </p>
             <a
               href="https://lin.ee/tiEYURo"
@@ -32,6 +32,7 @@ export default function Footer() {
               <Link href="/cases" className="text-sm text-[#B8B0A6] hover:text-white transition-colors">真實案例</Link>
               <Link href="/blog" className="text-sm text-[#B8B0A6] hover:text-white transition-colors">部落格</Link>
               <Link href="/faq" className="text-sm text-[#B8B0A6] hover:text-white transition-colors">常見問題</Link>
+              <Link href="/privacy" className="text-sm text-[#B8B0A6] hover:text-white transition-colors">隱私權政策</Link>
             </nav>
           </div>
 
@@ -52,8 +53,31 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Status bar */}
+        <div className="mt-14 pt-6 border-t border-[#3D3D3D] grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div>
+            <div className="text-[11px] text-[#8A8279] tracking-[2px] mb-1.5">服務類型</div>
+            <div className="text-sm font-medium">命理諮詢 & 法事服務</div>
+          </div>
+          <div>
+            <div className="text-[11px] text-[#8A8279] tracking-[2px] mb-1.5">服務地區</div>
+            <div className="text-sm font-medium">全球人類・線上皆可</div>
+          </div>
+          <div>
+            <div className="text-[11px] text-[#8A8279] tracking-[2px] mb-1.5">諮詢方式</div>
+            <div className="text-sm font-medium">LINE 預約制</div>
+          </div>
+          <div>
+            <div className="text-[11px] text-[#8A8279] tracking-[2px] mb-1.5">目前狀態</div>
+            <div className="text-sm font-medium flex items-center gap-1.5">
+              <span className="inline-block w-2 h-2 rounded-full bg-green-500 animate-[status-pulse_2s_ease-in-out_infinite]" />
+              接案中
+            </div>
+          </div>
+        </div>
+
         {/* Bottom bar */}
-        <div className="mt-14 pt-5 border-t border-[#3D3D3D] flex flex-col sm:flex-row justify-between items-center gap-3">
+        <div className="mt-8 pt-5 border-t border-[#3D3D3D] flex flex-col sm:flex-row justify-between items-center gap-3">
           <div className="text-[11px] text-[#5C5549] tracking-wide">
             © {new Date().getFullYear()} 百無禁忌研究所 BAI WU JIN JI
           </div>
