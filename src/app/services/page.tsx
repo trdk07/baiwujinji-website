@@ -42,7 +42,7 @@ export default function ServicesPage() {
           看看哪個跟你的狀況最像
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[1fr]">
           {serviceCategories.map((cat, i) => (
             <Link
               key={cat.slug}
