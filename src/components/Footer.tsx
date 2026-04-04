@@ -78,7 +78,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-8 pt-5 border-t border-[#3D3D3D] flex flex-col sm:flex-row justify-between items-center gap-3">
-          <div className="text-[11px] text-[#5C5549] tracking-wide">
+          <div className="text-[11px] text-[#8A8279] tracking-wide">
             © {new Date().getFullYear()} 百無禁忌研究所 BAI WU JIN JI
           </div>
           <div className="flex gap-5">
@@ -86,17 +86,17 @@ export default function Footer() {
               href="https://lin.ee/tiEYURo"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[11px] text-[#5C5549] hover:text-[#B8B0A6] transition-colors tracking-wide"
+              className="text-[11px] text-[#8A8279] hover:text-[#E05555] transition-colors tracking-wide"
             >
               LINE
             </a>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.threads.com/@fate_future"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[11px] text-[#5C5549] hover:text-[#B8B0A6] transition-colors tracking-wide"
+              className="text-[11px] text-[#8A8279] hover:text-[#E05555] transition-colors tracking-wide"
             >
-              Instagram
+              Threads
             </a>
           </div>
         </div>
