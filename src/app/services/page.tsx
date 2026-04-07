@@ -50,6 +50,14 @@ export default function ServicesPage() {
               className={`scard rv relative overflow-hidden bg-bg-card/70 backdrop-blur-[8px] border border-sand/18 rounded-[14px] p-10 no-underline text-inherit flex flex-col${cat.featured ? " scard-featured" : ""}`}
               style={{ "--card-color": cat.color } as React.CSSProperties}
             >
+              {/* Decorative icon */}
+              {cat.image && (
+                <img
+                  src={cat.image}
+                  alt=""
+                  className="absolute top-6 right-6 w-16 h-16 opacity-[0.15] pointer-events-none select-none"
+                />
+              )}
               <div className="flex items-center gap-3 mb-5 relative z-[1]">
                 <span className="text-[15px] font-bold tracking-[2px]" style={{ color: cat.color }}>
                   /{String(i + 1).padStart(2, "0")}
